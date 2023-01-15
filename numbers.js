@@ -1,4 +1,4 @@
-const slider = document.getElementBuId("my Range");
+const slider = document.getElementBuId("myRange");
 const maxWindow = document.querySelector('.max');
 const minus = document.querySelector('.minus');
 const plus = document.querySelector('.plus');
@@ -6,7 +6,7 @@ const diapazonAlert = document.querySelector('.diapazon');
 maxWindow.innerHTML = slider.value;
 diapAlert();
 
-slider.oniput = function() {
+slider.oninput = function() {
     maxWindow.innerHTML = slider.value;
     diapAlert();
 }
@@ -36,23 +36,28 @@ function numbersGame() {
     let diapazom = Number(slider.value);
 
     let tries;
-    // switch (diapazon) {
-    //    case 50:
-    //  tries =5;
-    //  break;
-    //    case 100:
-    //  tries = 7;
-    //  break;
-    //  case 200:
-    //  tries =10;
-    //  break;
-    //  default:
-    //  tries =3;
-    }
+    
 
     let triesButton = document.getElementsByName('tries');
     for(let i=0; i<triesButton.length; i++) {
-
+            if (triesButton[i].checked) {
+                switch (triesButton[i].id) {
+                    case 50:
+                  tries =5;
+                  break;
+                    case 100:
+                  tries = 7;
+                  break;
+                  case 200:
+                  tries =10;
+                  break;
+                  default:
+                  tries =3;
+                 }
+                tries = triesButton[i].value;
+                console.log(tries);
+                break;
+            }
     }
 
     const randomNumber = Math.floor(Math.random() * diapazon + 1);
@@ -71,6 +76,7 @@ function numbersGame() {
         }
         else{
             alert('Загадане число менше за введене');
-            alert(`У вас залишилось ${tries - i} спроб`)
+            alert(`У вас залишилось ${tries - i} спроб`);
         }
     }
+}
