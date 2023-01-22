@@ -59,10 +59,22 @@
 a:visited {
     color: red;
 }
-.diapazon {
+.diapozon {
     width: 100%;
     text-align: center;
     margin-top: 1.5vh;
     font-size: 2vw;
     font-style: italic;
+}
+.tries-group {
+    display: flex;
+    justify-content: center;
+}
+input[name="tries"] {
+    margin: 1vw;
+}
+label {
+    margin-block: 1vw;
+    font-size: 1.5vw;
+    font-weight: bolder;
 }
